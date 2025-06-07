@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Constraint Layout Atividade 3"
+        app:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="24dp"
+        android:text="Melhor Texto"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+    <TextView
+        android:id="@+id/textViewEsquerda"
+        android:layout_width="184dp"
+        android:layout_height="378dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Morbi in ultrices orci, porttitor tempus ex. Etiam ac posuere elit, vitae venenatis turpis. Curabitur nibh est, tempus non bibendum non, euismod in lectus. Nulla vel accumsan ex, sit amet posuere diam. Aliquam posuere pretium tellus eget vestibulum."
+        app:layout_constraintEnd_toStartOf="@+id/textViewDireita"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSubtitle" />
+
+    <TextView
+        android:id="@+id/textViewDireita"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Mauris eget mi ac enim venenatis tempus. Nam id mauris semper, lobortis mi ac, tincidunt erat. Sed sagittis ornare felis ac auctor. Aliquam ut consectetur ex. In pretium mauris nunc, eget vestibulum velit ultrices sit amet. Aenean feugiat dignissim vestibulum. Ut vulputate vehicula cursus."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewEsquerda"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSubtitle" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/bottomTextBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textViewEsquerda,textViewDireita" />
+
+    <Button
+        android:id="@+id/buttonEsquerda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="ESQUERDA"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEmpate"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomTextBarrier" />
+
+    <Button
+        android:id="@+id/buttonEmpate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EMPATE"
+        app:layout_constraintTop_toTopOf="@+id/buttonEsquerda"
+        app:layout_constraintStart_toEndOf="@+id/buttonEsquerda"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDireita" />
+
+    <Button
+        android:id="@+id/buttonDireita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DIREITA"
+        app:layout_constraintTop_toTopOf="@+id/buttonEsquerda"
+        app:layout_constraintStart_toEndOf="@+id/buttonEmpate"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
